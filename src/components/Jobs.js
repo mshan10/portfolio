@@ -26,24 +26,24 @@ const Tabs = styled.ul`
   list-style: none;
   z-index: 3;
   ${media.thone`
+    padding: 0px;
     display: flex;
     overflow-x: scroll;
     margin-bottom: 30px;
-    width: calc(100% + 100px);
-    margin-left: -50px;
+    width: 100%;
   `};
   ${media.phablet`
-    width: calc(100% + 50px);
-    margin-left: -25px;
+    overflow-x: scroll;
   `};
 
   li {
+    padding-left: 0px;
     &:first-of-type {
       ${media.thone`
-        margin-left: 50px;
+        padding-left: 0px;
       `};
       ${media.phablet`
-        margin-left: 25px;
+        margin-left: 0px;
       `};
     }
     &:last-of-type {
@@ -73,7 +73,7 @@ const Tab = styled.button`
   ${media.tablet`padding: 0 15px 2px;`};
   ${media.thone`
     ${mixins.flexCenter};
-    padding: 0 15px;
+    padding-left: 0px;
     text-align: center;
     border-left: 0;
     border-bottom: 2px solid ${colors.darkGrey};
@@ -108,10 +108,8 @@ const Highlighter = styled.span`
     transform: translateX(
       ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabWidth : 0)}px
     );
-    margin-left: 50px;
   `};
   ${media.phablet`
-    margin-left: 25px;
   `};
 `;
 const ContentContainer = styled.div`
@@ -183,7 +181,7 @@ const Jobs = () => {
       ]
     },
     {
-      "company": "Promazo: General Electric",
+      "company": "Promazo",
       "title": "Software Engineer Intern",
       "url": "promazo.com",
       "range": "July 2018 - August 2018",
@@ -195,7 +193,7 @@ const Jobs = () => {
       ]
     },
     {
-      "company": "Amaforge Scry",
+      "company": "Amaforge",
       "title": "Software Engineer Intern",
       "url": "amaforge.com",
       "range": "August 2018 - November 2018",
