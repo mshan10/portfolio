@@ -171,24 +171,40 @@ const JobDetails = styled.h5`
 const Jobs = () => {
   const data = [ 
     {
-        "company": "Covur",
-        "title": "Junior Web Developer Intern",
-        "url": "Covur.co",
-        "range": "May 2018 - August 2019",
-        "details": [
-          'yes',
-          'no'
-        ]
+      "company": "Covur",
+      "title": "Junior Web Developer Intern",
+      "url": "covur.co",
+      "range": "May 2018 - August 2019",
+      "details": [
+        'Led development of autonomous email and billing feature currently in use by 50 local business clients',
+        'Designed custom image filter for streamlined email creation reaching 15,000 customers',
+        'Implemented Mocha/Chai backend unit tests and Cypress integration tests for over 30 new features',
+        'Collaborated with coworkers on projects using agile design and scrum frameworks'
+      ]
     },
     {
-        "company": "Promazo: General Electric",
-        "title": "Software Engineer Intern",
-        "url": "promazo.com",
-        "range": "July 2018 - August 2018",
-        "details": [
-          'hello',
-          'bye'
-        ]
+      "company": "Promazo: General Electric",
+      "title": "Software Engineer Intern",
+      "url": "promazo.com",
+      "range": "July 2018 - August 2018",
+      "details": [
+        'Constructed a monthly memo submission application using the MEAN stack utilized by 90 GE Ventures employees',
+        'Designed an API that takes monthly input data and personal statistics to generate custom monthly report as pdf',
+        'Communicated with the COO of GE Ventures in weekly standups to discuss progress and objectives',
+        'Scaffoled front-end sections of the memo application to comply with company standards and designer mockups'
+      ]
+    },
+    {
+      "company": "Amaforge Scry",
+      "title": "Software Engineer Intern",
+      "url": "amaforge.com",
+      "range": "August 2018 - November 2018",
+      "details": [
+        'Developed user interface application to utilize custom NLP services that generates tailored grant, research, and faculty recommendations',
+        'Setup university registration and login profiles currently in use by Notre Dame research departments and expanding to other universities',
+        'Implemented infinite scrolling feature for list of grants and research opportunities',
+        'Constructed robust templates to nicely show NLP populated search results on both web and mobile devices'
+      ]
     }
   ]
   const [activeTabId, setActiveTabId] = useState(0);
