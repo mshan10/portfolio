@@ -10,6 +10,8 @@ const { colors } = theme;
 const JobsContainer = styled(Section)`
   position: relative;
   max-width: 700px;
+  padding-top: 20px;
+  paddubg-bottom: 20px;
 `;
 const TabsContainer = styled.div`
   display: flex;
@@ -167,7 +169,7 @@ const JobDetails = styled.h5`
 `;
 
 const Jobs = () => {
-  const data = [ 
+  const data = [
     {
       "company": "Covur",
       "title": "Junior Web Developer Intern",
@@ -208,11 +210,10 @@ const Jobs = () => {
   const [activeTabId, setActiveTabId] = useState(0);
   const revealContainer = useRef(null);
   // useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
-  console.log("HERE")
   console.log(data)
 
   return (
-    <JobsContainer id="jobs" ref={revealContainer}>
+    <JobsContainer id="jobs" ref={revealContainer} >
       <TabsContainer>
         <Tabs role="tablist">
           {
