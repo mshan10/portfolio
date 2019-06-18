@@ -1,171 +1,166 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-// import sr from '@utils/sr';
-// import { srConfig } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '../styles';
-// import { data } from '../data/data'
 const { colors } = theme;
 
 const JobsContainer = styled(Section)`
-  position: relative;
-  max-width: 700px;
-  padding-top: 20px;
-  paddubg-bottom: 20px;
+    position: relative;
+    max-width: 700px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 `;
 const TabsContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-  ${media.thone`
-    display: block;
-  `};
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    ${media.thone`
+        display: block;
+    `};
 `;
 const Tabs = styled.ul`
-  display: block;
-  position: relative;
-  width: max-content;
-  list-style: none;
-  z-index: 3;
-  ${media.thone`
-    padding: 0px;
-    display: flex;
-    overflow-x: scroll;
-    margin-bottom: 30px;
-    width: 100%;
-  `};
-  ${media.phablet`
-    overflow-x: scroll;
-  `};
+    display: block;
+    position: relative;
+    width: max-content;
+    list-style: none;
+    z-index: 3;
+    ${media.thone`
+        padding: 0px;
+        display: flex;
+        overflow-x: scroll;
+        margin-bottom: 30px;
+        width: 100%;
+    `};
+    ${media.phablet`
+        overflow-x: scroll;
+    `};
 
-  li {
-    padding-left: 0px;
-    &:first-of-type {
-      ${media.thone`
+    li {
         padding-left: 0px;
-      `};
-      ${media.phablet`
-        margin-left: 0px;
-      `};
+        &:first-of-type {
+            ${media.thone`
+                padding-left: 0px;
+            `};
+            ${media.phablet`
+                margin-left: 0px;
+            `};
+        }
+        &:last-of-type {
+            ${media.thone`
+                padding-right: 50px;
+            `};
+            ${media.phablet`
+                padding-right: 25px;
+            `};
+        }
     }
-    &:last-of-type {
-      ${media.thone`
-        padding-right: 50px;
-      `};
-      ${media.phablet`
-        padding-right: 25px;
-      `};
-    }
-  }
 `;
 const Tab = styled.button`
-  ${mixins.link};
-  box-shadow: none;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background-color: transparent;
-  height: ${theme.tabHeight}px;
-  padding: 0 20px 2px;
-  transition: ${theme.transition};
-  text-align: left;
-  white-space: nowrap;
+    ${mixins.link};
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    height: ${theme.tabHeight}px;
+    padding: 0 20px 2px;
+    transition: ${theme.transition};
+    text-align: left;
+    white-space: nowrap;
 
-  color: ${props => (props.isActive ? colors.gold : colors.lightGrey)};
-  ${media.tablet`padding: 0 15px 2px;`};
-  ${media.thone`
+    color: ${props => (props.isActive ? colors.gold : colors.lightGrey)};
+    ${media.tablet`padding: 0 15px 2px;`};
+    ${media.thone`
     ${mixins.flexCenter};
-    padding-left: 0px;
-    text-align: center;
-    border-left: 0;
-    border-bottom: 2px solid ${colors.darkGrey};
-    min-width: 120px;
-  `};
-  &:hover,
-  &:focus {
-    background-color: ${colors.lightNavy};
-  }
+        padding-left: 0px;
+        text-align: center;
+        border-left: 0;
+        border-bottom: 2px solid ${colors.darkGrey};
+        min-width: 120px;
+    `};
+    &:hover,
+    &:focus {
+        background-color: ${colors.lightNavy};
+    }
 `;
 const Highlighter = styled.span`
-  display: block;
-  background: ${colors.gold};
-  width: 2px;
-  height: ${theme.tabHeight}px;
-  border-radius: ${theme.borderRadius};
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition-delay: 0.1s;
-  z-index: 10;
-  transform: translateY(
-    ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabHeight : 0)}px
-  );
-  ${media.thone`
-    width: 100%;
-    max-width: ${theme.tabWidth}px;
-    height: 2px;
-    top: auto;
-    bottom: 0;
-    transform: translateX(
-      ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabWidth : 0)}px
+    display: block;
+    background: ${colors.gold};
+    width: 2px;
+    height: ${theme.tabHeight}px;
+    border-radius: ${theme.borderRadius};
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: 0.1s;
+    z-index: 10;
+    transform: translateY(
+        ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabHeight : 0)}px
     );
-  `};
-  ${media.phablet`
-  `};
+    ${media.thone`
+        width: 100%;
+        max-width: ${theme.tabWidth}px;
+        height: 2px;
+        top: auto;
+        bottom: 0;
+        transform: translateX(
+            ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabWidth : 0)}px
+        );
+    `};
 `;
 const ContentContainer = styled.div`
-  position: relative;
-  padding-top: 12px;
-  padding-left: 30px;
-  flex-grow: 1;
-  ${media.tablet`padding-left: 20px;`};
-  ${media.thone`padding-left: 0;`};
+    position: relative;
+    padding-top: 12px;
+    padding-left: 30px;
+    flex-grow: 1;
+    ${media.tablet`padding-left: 20px;`};
+    ${media.thone`padding-left: 0;`};
 `;
 const TabContent = styled.div`
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  opacity: ${props => (props.isActive ? 1 : 0)};
-  z-index: ${props => (props.isActive ? 2 : -1)};
-  position: ${props => (props.isActive ? 'relative' : 'absolute')};
-  visibility: ${props => (props.isActive ? 'visible' : 'hidden')};
-  transition: ${theme.transition};
-  transition-duration: ${props => (props.isActive ? '0.5s' : '0s')};
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    li {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 10px;
-      &:before {
-        content: '▹';
-        position: absolute;
-        left: 0;
-        color: ${colors.gold};
-      }
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: ${props => (props.isActive ? 1 : 0)};
+    z-index: ${props => (props.isActive ? 2 : -1)};
+    position: ${props => (props.isActive ? 'relative' : 'absolute')};
+    visibility: ${props => (props.isActive ? 'visible' : 'hidden')};
+    transition: ${theme.transition};
+    transition-duration: ${props => (props.isActive ? '0.5s' : '0s')};
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            &:before {
+                content: '▹';
+                position: absolute;
+                left: 0;
+                color: ${colors.gold};
+            }
+        }
     }
-  }
-  a {
-    ${mixins.inlineLink};
-  }
+    a {
+        ${mixins.inlineLink};
+    }
 `;
 const JobTitle = styled.h4`
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 `;
 const Company = styled.span`
-  color: ${colors.gold};
+    color: ${colors.gold};
 `;
 const JobDetails = styled.h5`
-  letter-spacing: 0.5px;
-  color: ${colors.lightSlate};
-  margin-bottom: 30px;
-  svg {
-    width: 15px;
-  }
+    letter-spacing: 0.5px;
+    color: ${colors.lightSlate};
+    margin-bottom: 30px;
+    svg {
+        width: 15px;
+    }
 `;
 
 const Jobs = () => {
