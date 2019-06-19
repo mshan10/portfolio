@@ -8,7 +8,7 @@ import pic03 from '../images/pic03.jpg'
 import Jobs from './Jobs'
 
 class Main extends React.Component {
-  
+
   render() {
 
     let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
@@ -20,7 +20,7 @@ class Main extends React.Component {
           <h2 className="major">About</h2>
           <span className="image main"><img src={pic01} alt="" /></span>
           <p>
-            Hello! My name is Matt Shan. I am currently a Junior at the University of Dame studying computer science. 
+            Hello! My name is Matt Shan. I am currently a Junior at the University of Dame studying computer science.
             As a developer and innovator, I am passionate about learning how emerging technologies and software can be used to bring meaningful change to those around me and in my community.
             In my previous software engineering positions, I have had the pleasure to work with other motivated developers in creating web applications and servers for both local startups and large corporations.
             My experience working at such diverse companies ranging from a B2B email services startup to a Fortune 500 company that leads the industry in security and exit hardware
@@ -66,8 +66,8 @@ class Main extends React.Component {
           <ul className="icons">
             <li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
             <li><a href="#" className="icon fa-instagram"><span className="label">Instagram</span></a></li>
-            <li><a href="#" className="icon fa-github"><span className="label">GitHub</span></a></li>
-            <li><a href="#" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
+            <li><a href="https://github.com/mshan10" className="icon fa-github"><span className="label">GitHub</span></a></li>
+            <li><a href="https://www.linkedin.com/in/matthew-shan-b69321149" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
           </ul>
           {close}
         </article>
