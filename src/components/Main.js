@@ -64,8 +64,6 @@ class Main extends React.Component {
             </ul>
           </form>
           <ul className="icons">
-            <li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
-            <li><a href="#" className="icon fa-instagram"><span className="label">Instagram</span></a></li>
             <li><a href="https://github.com/mshan10" className="icon fa-github"><span className="label">GitHub</span></a></li>
             <li><a href="https://www.linkedin.com/in/matthew-shan-b69321149" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
           </ul>
