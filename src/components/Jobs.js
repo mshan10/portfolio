@@ -173,7 +173,7 @@ const Jobs = () => {
       "details": [
         'Led development of autonomous email and billing feature currently in use by 50 local business clients',
         'Designed custom image filter for streamlined email creation reaching 15,000 customers',
-        'Implemented Mocha/Chai backend unit tests and Cypress integration tests for over 30 new features',
+        'Implemented Mocha/Chai back-end unit tests and Cypress integration tests for over 30 new features',
         'Collaborated with coworkers on projects using agile design and scrum frameworks'
       ]
     },
