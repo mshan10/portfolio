@@ -200,7 +200,19 @@ const Jobs = () => {
         'Implemented infinite scrolling feature for list of grants and research opportunities',
         'Constructed robust templates to nicely show NLP populated search results on both web and mobile devices'
       ]
-    }
+      },
+      {
+        "company": "Allegion",
+        "title": "Software Engineer/ Intrapreneur Intern",
+        "url": "allegion.com",
+        "range": "May 2019 - August 2019",
+        "details": [
+          'Developed user interface application to utilize custom NLP services that generates tailored grant, research, and faculty recommendations',
+          'Setup university registration and login profiles currently in use by Notre Dame research departments and expanding to other universities',
+          'Implemented infinite scrolling feature for list of grants and research opportunities',
+          'Constructed robust templates to nicely show NLP populated search results on both web and mobile devices'
+        ]
+      }
   ]
   const [activeTabId, setActiveTabId] = useState(0);
   const revealContainer = useRef(null);
