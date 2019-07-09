@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Pdf from '../assets/Matthew_Shan_Resume.pdf'
+import logo from '../images/msLogoWhite.svg'
 
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
-            <span className="icon fa-diamond"></span>
+            <img src={logo} alt="" style={{ height: '100%', padding: '12px' }}/>
         </div>
         <div className="content">
             <div className="inner">
