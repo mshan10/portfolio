@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-dimension-v2",
-  "description": "Gatsby Starter - Dimension V2",
+  "name": "portfolio",
+  "description": "Matt Shan Portfolio",
   "version": "1.0.0",
   "author": "Matthew Shan",
   "dependencies": {
