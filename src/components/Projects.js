@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '../styles';
 const { colors } = theme;
 
-const JobsContainer = styled(Section)`
+const ProjectsContainer = styled(Section)`
     position: relative;
     max-width: 700px;
     padding-top: 20px;
@@ -148,13 +148,13 @@ const TabContent = styled.div`
         ${mixins.inlineLink};
     }
 `;
-const JobTitle = styled.h4`
+const ProjectTitle = styled.h4`
     margin-bottom: 5px;
 `;
 const Company = styled.span`
     color: ${colors.gold};
 `;
-const JobDetails = styled.h5`
+const ProjectDetails = styled.h5`
     letter-spacing: 0.5px;
     color: ${colors.lightSlate};
     margin-bottom: 30px;
@@ -163,56 +163,35 @@ const JobDetails = styled.h5`
     }
 `;
 
-const Jobs = () => {
+const Projects = () => {
   const tempdata = [
     {
-      "company": "Covur",
-      "title": "Junior Web Developer Intern",
+      "company": "Duncan",
+      "title": "A directory app for the Duncan Student Center at Notre Dame, listing the services and their location in the building",
       "url": "covur.co",
+      "languages": "AngularJS | NodeJS (Express) | MongoDB",
       "range": "May 2018 - August 2019",
       "details": [
-        'Led development of autonomous email and billing feature currently in use by 50 local business clients',
-        'Designed custom image filter for streamlined email creation reaching 15,000 customers',
-        'Implemented Mocha/Chai back-end unit tests and Cypress integration tests for over 30 new features',
-        'Collaborated with coworkers on projects using agile design and scrum frameworks'
+        'Allows the user to search through a directory of the Duncan Student Center',
+        'Displays relevant information and images related to the search',
+        'Supports user submitted events for the student center and email notifications on updates',
+        'Managed directory information through a MongoDB database with Parse framework'
       ]
     },
     {
-      "company": "Promazo",
+      "company": "Porogram",
       "title": "Software Engineer Intern",
       "url": "promazo.com",
+      "languages": "ReactJS | NodeJS (Express) | MongoDB",
       "range": "July 2018 - August 2018",
       "details": [
-        'Constructed a monthly memo submission application using the MEAN stack utilized by 90 GE Ventures employees',
-        'Designed an API that takes monthly input data and personal statistics to generate custom monthly report as pdf',
-        'Communicated with the COO of GE Ventures in weekly standups to discuss progress and objectives',
-        'Scaffoled front-end sections of the memo application to comply with company standards and designer mockups'
+        'Displays hundreds of searchable player statistics for the game League of Legends',
+        'Generated web and mobile friendly frontend app using ReactJS and Material Design',
+        'Managed backend API calls to Riot Games using NodeJS',
+        'Implemented infinite scrolling to dynamically display previous games',
+        'Communicate with Mongo database and AWS to store user signup and login info'
       ]
-    },
-    {
-      "company": "Amaforge",
-      "title": "Software Engineer Intern",
-      "url": "amaforge.com",
-      "range": "August 2018 - November 2018",
-      "details": [
-        'Developed user interface application to utilize custom NLP services that generates tailored grant, research, and faculty recommendations',
-        'Setup university registration and login profiles currently in use by Notre Dame research departments and expanding to other universities',
-        'Implemented infinite scrolling feature for list of grants and research opportunities',
-        'Constructed robust templates to nicely show NLP populated search results on both web and mobile devices'
-      ]
-      },
-      {
-        "company": "Allegion",
-        "title": "Software Engineer/ Intrapreneur Intern",
-        "url": "allegion.com",
-        "range": "May 2019 - August 2019",
-        "details": [
-          'Developed user interface application to utilize custom NLP services that generates tailored grant, research, and faculty recommendations',
-          'Setup university registration and login profiles currently in use by Notre Dame research departments and expanding to other universities',
-          'Implemented infinite scrolling feature for list of grants and research opportunities',
-          'Constructed robust templates to nicely show NLP populated search results on both web and mobile devices'
-        ]
-      }
+    }
   ]
   const [activeTabId, setActiveTabId] = useState(0);
   const revealContainer = useRef(null);
@@ -221,7 +200,7 @@ const Jobs = () => {
   console.log(data)
 
   return (
-    <JobsContainer id="jobs" ref={revealContainer} >
+    <ProjectsContainer id="projects" ref={revealContainer} >
       <TabsContainer>
         <Tabs role="tablist">
           {
@@ -249,28 +228,25 @@ const Jobs = () => {
           {data &&
             data.map(( node , i) => {
               // const { frontmatter, html } = node;
-              const { title, url, company, range, details } = node;
+              const { title, url, languages, range, details } = node;
               return (
                 <TabContent
                   key={i}
                   isActive={activeTabId === i}
-                  id={`job${i}`}
+                  id={`project${i}`}
                   role="tabpanel"
                   tabIndex="0"
-                  aria-labelledby={`job${i}`}
+                  aria-labelledby={`project${i}`}
                   aria-hidden={activeTabId !== i}>
-                  <JobTitle>
+                  <ProjectTitle>
                     <span>{title}</span>
-                    <Company>
-                      <span>&nbsp;@&nbsp;</span>
-                      <a href={url} target="_blank" rel="nofollow noopener noreferrer">
-                        {company}
-                      </a>
-                    </Company>
-                  </JobTitle>
-                  <JobDetails>
+                  </ProjectTitle>
+                  <Company>
+                    {languages}
+                  </Company>
+                  <ProjectDetails>
                     <span>{range}</span>
-                  </JobDetails>
+                  </ProjectDetails>
                   <ul>
                     {details.map((detail) => <li>{detail}</li>)}
                   </ul>
@@ -279,12 +255,12 @@ const Jobs = () => {
             })}
         </ContentContainer>
       </TabsContainer>
-    </JobsContainer>
+    </ProjectsContainer>
   );
 };
 
-Jobs.propTypes = {
+Projects.propTypes = {
   data: PropTypes.array.isRequired,
 };
 
-export default Jobs;
+export default Projects;
