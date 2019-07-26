@@ -197,7 +197,6 @@ const Projects = () => {
   const revealContainer = useRef(null);
   const data = tempdata
   // useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
-  console.log(data)
 
   return (
     <ProjectsContainer id="projects" ref={revealContainer} >
