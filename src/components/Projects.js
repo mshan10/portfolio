@@ -167,7 +167,7 @@ const Projects = () => {
   const tempdata = [
     {
       "company": "Duncan",
-      "title": "A directory app for the Duncan Student Center at Notre Dame, listing the services and their location in the building",
+      "description": "A directory app for the Duncan Student Center at Notre Dame, containing various business listings and services",
       "url": "covur.co",
       "languages": "AngularJS | NodeJS (Express) | MongoDB",
       "range": "May 2018 - August 2019",
@@ -180,8 +180,8 @@ const Projects = () => {
     },
     {
       "company": "Porogram",
-      "title": "Software Engineer Intern",
-      "url": "promazo.com",
+      "description": "An application that provides statistical insights for playes of the game League of Legends",
+      "url": "porogram.me",
       "languages": "ReactJS | NodeJS (Express) | MongoDB",
       "range": "July 2018 - August 2018",
       "details": [
@@ -228,7 +228,7 @@ const Projects = () => {
           {data &&
             data.map(( node , i) => {
               // const { frontmatter, html } = node;
-              const { title, url, languages, range, details } = node;
+              const { description, url, languages, range, details } = node;
               return (
                 <TabContent
                   key={i}
@@ -239,7 +239,7 @@ const Projects = () => {
                   aria-labelledby={`project${i}`}
                   aria-hidden={activeTabId !== i}>
                   <ProjectTitle>
-                    <span>{title}</span>
+                    <span>{description}</span>
                   </ProjectTitle>
                   <Company>
                     {languages}

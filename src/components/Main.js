@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 
 import pic01 from '../images/pic01.jpg'
 
-import { jobsData } from '../data/data'
-
 import Jobs from './Jobs'
 import Projects from './Projects'
 
