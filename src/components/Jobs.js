@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '../styles';
+import pic01 from '../images/pic01.jpg'
 const { colors } = theme;
 
 const JobsContainer = styled(Section)`
@@ -217,8 +218,10 @@ const Jobs = () => {
   const [activeTabId, setActiveTabId] = useState(0);
   const revealContainer = useRef(null);
   const data = tempdata
-  // useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
-  console.log(data)
+  const img = {
+    width: '100%',
+    paddingBottom: '10px'
+  }
 
   return (
     <JobsContainer id="jobs" ref={revealContainer} >
@@ -226,7 +229,6 @@ const Jobs = () => {
         <Tabs role="tablist">
           {
             data.map(( node, i ) => {
-              console.log("node ", node)
               const { company } = node;
               return (
                 <li key={i}>
@@ -260,6 +262,7 @@ const Jobs = () => {
                   aria-labelledby={`job${i}`}
                   aria-hidden={activeTabId !== i}>
                   <JobTitle>
+                    <img src={pic01} style={img}/>
                     <span>{title}</span>
                     <Company>
                       <span>&nbsp;@&nbsp;</span>
