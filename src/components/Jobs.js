@@ -2,7 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '../styles';
-import pic01 from '../images/pic01.jpg'
+import covur from '../images/covur.png'
+import promazo from '../images/promazo.png'
+import amaforge from '../images/amaforge.png'
+import allegion from '../images/allegion.jpg'
+
+
 const { colors } = theme;
 
 const JobsContainer = styled(Section)`
@@ -169,7 +174,8 @@ const Jobs = () => {
     {
       "company": "Covur",
       "title": "Junior Web Developer Intern",
-      "url": "covur.co",
+      "url": "https://covur.co",
+      "pic": covur,
       "range": "May 2018 - August 2019",
       "details": [
         'Led development of autonomous email and billing feature currently in use by 50 local business clients',
@@ -181,7 +187,8 @@ const Jobs = () => {
     {
       "company": "Promazo",
       "title": "Software Engineer Intern",
-      "url": "promazo.com",
+      "url": "https://promazo.com",
+      "pic": promazo,
       "range": "July 2018 - August 2018",
       "details": [
         'Constructed a monthly memo submission application using the MEAN stack utilized by 90 GE Ventures employees',
@@ -191,9 +198,10 @@ const Jobs = () => {
       ]
     },
     {
-      "company": "Amaforge",
+      "company": "Amaforge Scry",
       "title": "Software Engineer Intern",
-      "url": "amaforge.com",
+      "url": "http://www.amaforge.com/#software",
+      "pic": amaforge,
       "range": "August 2018 - November 2018",
       "details": [
         'Developed user interface application to utilize custom NLP services that generates tailored grant, research, and faculty recommendations',
@@ -205,7 +213,8 @@ const Jobs = () => {
       {
         "company": "Allegion",
         "title": "Software Engineer/ Intrapreneur Intern",
-        "url": "allegion.com",
+        "url": "https://www.allegion.com/corp/en/index.html",
+        "pic": allegion,
         "range": "May 2019 - August 2019",
         "details": [
           'Developed user interface application to utilize custom NLP services that generates tailored grant, research, and faculty recommendations',
@@ -219,8 +228,16 @@ const Jobs = () => {
   const revealContainer = useRef(null);
   const data = tempdata
   const img = {
+    maxWidth: '100%',
+    height: '100px',
+    marginLeft: 'auto',
+    marginRight:'auto',
+    display: 'block'
+  }
+  const imgContainer = {
     width: '100%',
-    paddingBottom: '10px'
+    paddingBottom: '20px',
+    
   }
 
   return (
@@ -251,7 +268,7 @@ const Jobs = () => {
           {data &&
             data.map(( node , i) => {
               // const { frontmatter, html } = node;
-              const { title, url, company, range, details } = node;
+              const { title, url, pic, company, range, details } = node;
               return (
                 <TabContent
                   key={i}
@@ -262,7 +279,9 @@ const Jobs = () => {
                   aria-labelledby={`job${i}`}
                   aria-hidden={activeTabId !== i}>
                   <JobTitle>
-                    <img src={pic01} style={img}/>
+                    <div style={imgContainer}>
+                      <img src={pic} style={img}/>
+                    </div>
                     <span>{title}</span>
                     <Company>
                       <span>&nbsp;@&nbsp;</span>
