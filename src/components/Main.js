@@ -24,7 +24,7 @@ class Main extends React.Component {
             In my previous software engineering positions, I have had the pleasure to work with other motivated developers in creating web applications and servers for both local startups and large corporations.
             My experience working at such diverse companies ranging from a B2B email services startup to a Fortune 500 company that leads the industry in security and exit hardware
             has given me a valuable perspective on how software development works within different environments.
-            This has helped me to develop personally as a software engineer and learn to efficiently adapt to new and unique situations. Check out some of my <a href="#work">awesome work</a>.</p>
+            This has helped me to develop personally as a software engineer and learn to efficiently adapt to new and unique situations.</p>
           {close}
         </article>
 
