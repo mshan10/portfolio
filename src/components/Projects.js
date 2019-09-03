@@ -168,7 +168,7 @@ const Projects = () => {
     {
       "company": "Duncan",
       "description": "A directory app for the Duncan Student Center at Notre Dame, containing various business listings and services",
-      "url": "covur.co",
+      "url": "",
       "languages": "AngularJS | NodeJS (Express) | MongoDB",
       "range": "May 2018 - August 2019",
       "details": [
@@ -191,7 +191,45 @@ const Projects = () => {
         'Implemented infinite scrolling to dynamically display previous games',
         'Communicate with Mongo database and AWS to store user signup and login info'
       ]
+    },
+    {
+      "company": "Pharmacy Simulator",
+      "description": "A pharmacy simulator to store and dispense pills of different drugs",
+      "url": "",
+      "languages": "C++",
+      "range": "January 2019 - February 2019",
+      "details": [
+        'Implemented structure of pharmacy using object oriented design patterns',
+        'Stored bottles of pills in priority queue by expiration date to optimize dispension'
+      ]
+    },
+    {
+      "company": "Sprout",
+      "description": "Personalized event and schedule planner for college students designed to optimize planning and reduce stress",
+      "url": "",
+      "languages": "Angular | NodeJS",
+      "range": "March 2019 - March 2019",
+      "details": [
+        'Designed back end system to connect with Notre Dame API to retrive university event data',
+        'Recommends clubs and activities to join based on user selected interests',
+        'Intuitive and user-friendly design with inspirational messages to support mental health',
+        'Adds current class and club schedule to personalized calendar taken from student NDID',
+        'Runner Up at Notre Dame Hackathon 2019'
+      ]
+    },
+    {
+      "company": "Who Else Feels the Pain",
+      "description": "Data Science project to provide insights on how certain industries were impacted financially from the effects of significant terrorist attacks",
+      "url": "",
+      "languages": "Python",
+      "range": "March 2019 - May 2019",
+      "details": [
+        'Parsed and cleaned data elements from a terrorism dataset and stock market dataset consisting of data ranging over 30 years',
+        'Analyzed trends and developed predictions using regression and classification algorithms through numpy, pandas, and scikit-learn',
+        'Compared observations of weekly trends within top industry ETFs to dates of active and significant terror activity using K-means clustering and linear regression'
+      ]
     }
+    
   ]
   const [activeTabId, setActiveTabId] = useState(0);
   const revealContainer = useRef(null);
