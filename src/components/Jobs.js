@@ -198,7 +198,7 @@ const Jobs = () => {
       ]
     },
     {
-      "company": "Amaforge Scry",
+      "company": "Amaforge",
       "title": "Software Engineer Intern",
       "url": "http://www.amaforge.com/#software",
       "pic": amaforge,
