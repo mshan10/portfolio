@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import pic01 from '../images/pic01.jpg'
+import pic01 from '../images/about_me.jpg'
 
 import Jobs from './Jobs'
 import Projects from './Projects'
@@ -63,7 +63,7 @@ class Main extends React.Component {
           </form>
           <ul className="icons">
             <li><a href="https://github.com/mshan10" className="icon fa-github"><span className="label">GitHub</span></a></li>
-            <li><a href="https://www.linkedin.com/in/matthew-shan-b69321149" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
+            <li><a href="https://www.linkedin.com/in/matthew-shan" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
           </ul>
           {close}
         </article>
