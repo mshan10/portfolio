@@ -193,7 +193,7 @@ const Projects = () => {
       ]
     },
     {
-      "company": "Pharmacy Simulator",
+      "company": "Pharmacy",
       "description": "A pharmacy simulator to store and dispense pills of different drugs",
       "url": "",
       "languages": "C++",
@@ -218,8 +218,8 @@ const Projects = () => {
       ]
     },
     {
-      "company": "Who Else Feels the Pain",
-      "description": "Data Science project to provide insights on how certain industries were impacted financially from the effects of significant terrorist attacks",
+      "company": "Terror",
+      "description": "'Who Else Feels the Pain?' Data Science project to provide insights on how certain industries were impacted financially from the effects of significant terrorist attacks",
       "url": "",
       "languages": "Python",
       "range": "March 2019 - May 2019",
