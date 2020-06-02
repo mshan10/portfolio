@@ -6,6 +6,7 @@ import covur from '../images/covur.png'
 import promazo from '../images/promazo.png'
 import amaforge from '../images/amaforge.png'
 import allegion from '../images/allegion.jpg'
+import coursicle from '../images/coursicle.png'
 
 
 const { colors } = theme;
@@ -160,10 +161,15 @@ const JobTitle = styled.h4`
 const Company = styled.span`
     color: ${colors.gold};
 `;
+const Languages = styled.h4`
+    letter-spacing: 0.5px;
+    color: ${colors.gold};
+    margin-bottom: 30px;
+`;
 const JobDetails = styled.h5`
     letter-spacing: 0.5px;
     color: ${colors.lightSlate};
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     svg {
         width: 15px;
     }
@@ -177,6 +183,7 @@ const Jobs = () => {
       "url": "https://covur.co",
       "pic": covur,
       "range": "May 2018 - August 2019",
+      "languages": "AngularJS | NodeJS (Express) | MongoDB",
       "details": [
         'Led development of autonomous email and billing feature currently in use by 50 local business clients',
         'Designed custom image filter for streamlined email creation reaching 15,000 customers',
@@ -190,6 +197,7 @@ const Jobs = () => {
       "url": "https://promazo.com",
       "pic": promazo,
       "range": "July 2018 - August 2018",
+      "languages": "AngularJS | NodeJS (Express) | MongoDB",
       "details": [
         'Constructed a monthly memo submission application using the MEAN stack utilized by 90 GE Ventures employees',
         'Designed an API that takes monthly input data and personal statistics to generate custom monthly report as pdf',
@@ -203,6 +211,7 @@ const Jobs = () => {
       "url": "http://www.amaforge.com/#software",
       "pic": amaforge,
       "range": "August 2018 - November 2018",
+      "languages": "AngularJS | NodeJS (Express) | MongoDB",
       "details": [
         'Developed user interface application to utilize custom NLP services that generates tailored grant, research, and faculty recommendations',
         'Setup university registration and login profiles currently in use by Notre Dame research departments and expanding to other universities',
@@ -216,11 +225,24 @@ const Jobs = () => {
         "url": "https://www.allegion.com/corp/en/index.html",
         "pic": allegion,
         "range": "May 2019 - August 2019",
+        "languages": "Swift | Kotlin | Swift | XML",
         "details": [
-          'Developed user interface application to utilize custom NLP services that generates tailored grant, research, and faculty recommendations',
-          'Setup university registration and login profiles currently in use by Notre Dame research departments and expanding to other universities',
-          'Implemented infinite scrolling feature for list of grants and research opportunities',
-          'Constructed robust templates to nicely show NLP populated search results on both web and mobile devices'
+          'Led development of iOS and Android libraries designed to control new wireless bluetooth residential locks',
+          'Implemented elliptical curve digital signature algorithm (ECDSA) encryption to secure data transmission through bluetooth channels',
+          'Engaged with regional startup incubators and accelerators to promote and discuss technologies developed by our intrapreneur and labs department'
+        ]
+      },
+      {
+        "company": "Coursicle",
+        "title": "Software Engineer Intern",
+        "url": "https://www.coursicle.com",
+        "pic": coursicle,
+        "range": "January 2020 - May 2020",
+        "languages": "Linux | Apache | MySQL | PHP | Javascript | JQuery",
+        "details": [
+          'Developed new course scrapers to provide registration and notification services for over 5000 university students',
+          'Planned, designed, and shipped course and professor ranking software in use by tens of thousands of students over 900 universities',
+          'Optimized web scraping scripts by 80% by parallelizing sequential code using multithreaded functionality'
         ]
       }
   ]
@@ -268,7 +290,7 @@ const Jobs = () => {
           {data &&
             data.map(( node , i) => {
               // const { frontmatter, html } = node;
-              const { title, url, pic, company, range, details } = node;
+              const { title, url, pic, company, range, languages, details } = node;
               return (
                 <TabContent
                   key={i}
@@ -293,6 +315,9 @@ const Jobs = () => {
                   <JobDetails>
                     <span>{range}</span>
                   </JobDetails>
+                  <Languages>
+                    <span>{languages}</span>
+                  </Languages>
                   <ul>
                     {details.map((detail) => <li>{detail}</li>)}
                   </ul>
