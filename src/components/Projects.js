@@ -192,17 +192,17 @@ const Projects = () => {
         'Communicate with Mongo database and AWS to store user signup and login info'
       ]
     },
-    {
-      "company": "Pharmacy",
-      "description": "A pharmacy simulator to store and dispense pills of different drugs",
-      "url": "",
-      "languages": "C++",
-      "range": "January 2019 - February 2019",
-      "details": [
-        'Implemented structure of pharmacy using object oriented design patterns',
-        'Stored bottles of pills in priority queue by expiration date to optimize dispension'
-      ]
-    },
+    // {
+    //   "company": "Pharmacy",
+    //   "description": "A pharmacy simulator to store and dispense pills of different drugs",
+    //   "url": "",
+    //   "languages": "C++",
+    //   "range": "January 2019 - February 2019",
+    //   "details": [
+    //     'Implemented structure of pharmacy using object oriented design patterns',
+    //     'Stored bottles of pills in priority queue by expiration date to optimize dispension'
+    //   ]
+    // },
     {
       "company": "Sprout",
       "description": "Personalized event and schedule planner for college students designed to optimize planning and reduce stress",
