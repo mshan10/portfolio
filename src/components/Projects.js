@@ -166,6 +166,19 @@ const ProjectDetails = styled.h5`
 const Projects = () => {
   const tempdata = [
     {
+      "company": "BetterSports",
+      "description": "",
+      "url": "",
+      "languages": "AngularJS | NodeJS (Express) | MongoDB",
+      "range": "May 2018 - August 2019",
+      "details": [
+        'Allows the user to search through a directory of the Duncan Student Center',
+        'Displays relevant information and images related to the search',
+        'Supports user submitted events for the student center and email notifications on updates',
+        'Managed directory information through a MongoDB database with Parse framework'
+      ]
+    },
+    {
       "company": "Duncan",
       "description": "A directory app for the Duncan Student Center at Notre Dame, containing various business listings and services",
       "url": "",
@@ -192,17 +205,6 @@ const Projects = () => {
         'Communicate with Mongo database and AWS to store user signup and login info'
       ]
     },
-    // {
-    //   "company": "Pharmacy",
-    //   "description": "A pharmacy simulator to store and dispense pills of different drugs",
-    //   "url": "",
-    //   "languages": "C++",
-    //   "range": "January 2019 - February 2019",
-    //   "details": [
-    //     'Implemented structure of pharmacy using object oriented design patterns',
-    //     'Stored bottles of pills in priority queue by expiration date to optimize dispension'
-    //   ]
-    // },
     {
       "company": "Sprout",
       "description": "Personalized event and schedule planner for college students designed to optimize planning and reduce stress",
@@ -218,8 +220,8 @@ const Projects = () => {
       ]
     },
     {
-      "company": "Terror",
-      "description": "'Who Else Feels the Pain?' Data Science project to provide insights on how certain industries were impacted financially from the effects of significant terrorist attacks",
+      "company": "Terrorism",
+      "description": "Data Science project to provide insights on how certain industries were impacted financially from significant terrorist attacks",
       "url": "",
       "languages": "Python",
       "range": "March 2019 - May 2019",

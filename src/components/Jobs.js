@@ -7,6 +7,7 @@ import promazo from '../images/promazo.png'
 import amaforge from '../images/amaforge.png'
 import allegion from '../images/allegion.jpg'
 import coursicle from '../images/coursicle.png'
+import capitalone from '../images/capitalone.png'
 
 
 const { colors } = theme;
@@ -243,6 +244,18 @@ const Jobs = () => {
           'Developed new course scrapers to provide registration and notification services for over 5000 university students',
           'Planned, designed, and shipped course and professor ranking software in use by tens of thousands of students over 900 universities',
           'Optimized web scraping scripts by 80% by parallelizing sequential code using multithreaded functionality'
+        ]
+      },
+      {
+        "company": "Capital One",
+        "title": "Software Engineer Intern",
+        "url": "https://www.capitalone.com/",
+        "pic": capitalone,
+        "range": "June 2020 - August 2020",
+        "languages": "Angular | NodeJS (Express) | Java | AWS | Jenkins",
+        "details": [
+          'Developed and deployed a full-stack internal inventory application to display active capabilities and services of the finance platform and encourage discovery and reuse across all teams',
+          'Designed a dependency graphing tool using the D3 graphing library to show relationships and recurrences of services'
         ]
       }
   ]
